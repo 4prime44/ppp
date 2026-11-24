@@ -16,6 +16,9 @@ def sprawdzenie(wejscie, kod):
     if (jedno==(kod%10)):
         flagi=flagi+"+"
         jedno=10
+    if (len(flagi)<4):
+        while (len(flagi)<4):
+            flagi=flagi+"-"
     if (flagi=="++++"):
         return ("Zgadłeś sekretny kod")
     else:
