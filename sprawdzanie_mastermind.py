@@ -6,20 +6,32 @@ def sprawdzenie(wejscie, kod):
     flagi=""
     if (tys==kod//1000):
         flagi=flagi+"+"
-        tys=10
+    elif (kod.find(tys) != -1):
+        flagi = flagi + "/"
+    else:
+        flagi=flagi+"-"
     if (setki==(kod//100)%10):
         flagi=flagi+"+"
-        setki=10
+    elif (kod.find(setki) != -1):
+        flagi = flagi + "/"
+    else:
+        flagi=flagi+"-"
     if (dzies==((kod%100)//10)):
         flagi=flagi+"+"
-        dzies=10
+    elif (kod.find(setki) != -1):
+        flagi = flagi + "/"
+    else:
+        flagi=flagi+"-"
     if (jedno==(kod%10)):
         flagi=flagi+"+"
-        jedno=10
-    if (len(flagi)<4):
-        while (len(flagi)<4):
-            flagi=flagi+"-"
+    elif (kod.find(setki) != -1):
+        flagi = flagi + "/"
+    else:
+        flagi=flagi+"-"
     if (flagi=="++++"):
         return ("Zgadłeś sekretny kod")
-    else:
-        return flagi
+    return flagi
+
+
+    5789
+    1290
